@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/samuel200/bit-max/precache-manifest.b92e8f90f4881a1d565dcab70d4bbe8f.js"
+  "/BitCoinSite/precache-manifest.a1cdbbaf1d1bb76677cb9ae0cae4ed8e.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/samuel200/bit-max/index.html", {
+workbox.routing.registerNavigationRoute("/BitCoinSite/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/BitCoinSite/static/media/arial.bf47b841.jpg"
   },
   {
-    "revision": "8a7723d075eacd012316",
+    "revision": "da2b01e6e68d9f3b7b69",
     "url": "/BitCoinSite/static/css/main.6f1a07dd.chunk.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "/BitCoinSite/static/js/runtime~main.e6b56fe9.js"
   },
   {
-    "revision": "c54f4d596b6d8a62e634",
-    "url": "/BitCoinSite/static/js/2.c54f4d59.chunk.js"
-  },
-  {
-    "revision": "ced0cb21880ecfb9c4eadfe56e57acfe",
-    "url": "/BitCoinSite/static/media/bitcoin-background.ced0cb21.jpg"
+    "revision": "9219034e8f5d9b333bf2",
+    "url": "/BitCoinSite/static/js/2.9219034e.chunk.js"
   },
   {
     "revision": "3072552009f7ea4721d2ede0d73d901c",
     "url": "/BitCoinSite/static/media/about-background.30725520.jpg"
+  },
+  {
+    "revision": "ced0cb21880ecfb9c4eadfe56e57acfe",
+    "url": "/BitCoinSite/static/media/bitcoin-background.ced0cb21.jpg"
   },
   {
     "revision": "754deac52cb010d68aad9267c64fb88c",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/BitCoinSite/static/media/amanda.d0d90779.jpg"
   },
   {
-    "revision": "8a7723d075eacd012316",
-    "url": "/BitCoinSite/static/js/main.8a7723d0.chunk.js"
+    "revision": "da2b01e6e68d9f3b7b69",
+    "url": "/BitCoinSite/static/js/main.da2b01e6.chunk.js"
   },
   {
     "revision": "42a099ad1beac9bd835eb95518049cb8",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/BitCoinSite/static/media/2.6ad8190c.mp4"
   },
   {
-    "revision": "62e0966c57e2c803c403ac83415c9bcc",
+    "revision": "2a18391e5fd609713f8c8413c9b9f589",
     "url": "/BitCoinSite/index.html"
   }
 ];

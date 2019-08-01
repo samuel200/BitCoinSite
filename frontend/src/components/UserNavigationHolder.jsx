@@ -9,11 +9,10 @@ visibleStyle = {
 };
 
 export default function UserNavigationHolder({ navigations, changeCurrentPage, hidden, setHidden, setAuthentication, setAuthenticatedUser}) {
-    let [width, setWidth] = useState(0);
+    let [width, setWidth] = useState(window.innerWidth);
 
     window.addEventListener('resize', e =>{
         setWidth(e.target.innerWidth)
-        console.log(width)
     }, false)
 
     return (
@@ -23,7 +22,11 @@ export default function UserNavigationHolder({ navigations, changeCurrentPage, h
                 navigations.map( item => <a href="#" onClick={ e =>{
                     e.preventDefault();
                     changeCurrentPage(item.name);
-                    setHidden(true);
+                    if(width < 1080){
+                        setHidden(true);
+                    }else{
+                        setHidden(false);
+                    }
                 }} style={{display: 'flex', justifyContent: 'space-evenly'}}><i className={ item.iconClass }></i> <i>{ item.name }</i></a>)
             }
             <a href="#" style={{display: 'flex', justifyContent: 'space-evenly'}} onClick={()=>{

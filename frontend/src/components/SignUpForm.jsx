@@ -32,7 +32,7 @@ const validateSignUP = (setErrorMessage, setAuthentication, setAuthenticatedUser
             setAuthentication(true);
         })
         .catch(error =>{
-            if(error.status == "500"){
+            if(error.status === "500"){
                 showError("Email not unique", setErrorMessage, errorHolder)
             }
             showError("Error in signup", setErrorMessage, errorHolder)

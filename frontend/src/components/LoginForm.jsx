@@ -14,24 +14,30 @@ const showErrorMessage = (errorHolder, errorMessage, setErrorMessage)=>{
 }
 
 const authenticate = (form, errorHolder, setErrorMessage, setAuthentication, setAuthenticatedUser, setLoading) =>{
-    const username = form.querySelector("input[name=username]").value;
+    const email = form.querySelector("input[name=email]").value;
     const password = form.querySelector("input[name=password]").value;
-
+    const emailTest = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
     setLoading(true);
-    axios.post(url.domain_url + "/login/", {username, password})
-        .then(response => {
-            const data = response.data;
-            data.userPassword = password;
-            localStorage.setItem("authenticatedUser", JSON.stringify(data))
-            setAuthenticatedUser(response.data)
-            setAuthentication(true)
-            setLoading(false)
-        })
-        .catch(error =>{
-            setLoading(false)
-            showErrorMessage(errorHolder, "Invalid login details", setErrorMessage)
-        })
+    if(emailTest.test(email)){
+        axios.post(url.domain_url + "/login/", {email, password})
+            .then(response => {
+                const data = response.data;
+                data.userPassword = password;
+                localStorage.setItem("authenticatedUser", JSON.stringify(data))
+                setAuthenticatedUser(response.data)
+                setAuthentication(true)
+                setLoading(false)
+            })
+            .catch(error =>{
+                setLoading(false)
+                showErrorMessage(errorHolder, "Invalid login details", setErrorMessage)
+            })
+    }
+    else{
+        setLoading(false);
+        showErrorMessage(errorHolder, "invalid email", setErrorMessage)
+    }
 }
 
 
@@ -50,7 +56,7 @@ function LoginForm({ setAuthentication, setAuthenticatedUser }) {
                 
                 authenticate(e.target, errorHolder, setErrorMessage, setAuthentication, setAuthenticatedUser, setLoading);
             }}>
-                <input type="text" name="username" placeholder="username"/>
+                <input type="email" name="email" placeholder="Email Address"/>
                 <div className="password-input">
                     <input type={!clicked ? "password" : "text"} name="password" placeholder="password"/>
                     <span>

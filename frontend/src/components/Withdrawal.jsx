@@ -44,8 +44,8 @@ export default function Withdrawal() {
             <form onSubmit={ onSubmit }>
                 <div id="withdrawal-form" style={ {position: 'relative', background: "#2f3e47 !important"} }>
                     <div className="error-message">{ errorMessage }</div>
-                    <p>Make sure you provide a valid <b>BitCoin Wallet Address</b> to avoid payment issues.</p>
-                    <input type="text" name="text" placeholder="BitCoin Address"/>
+                    <p>Make sure you provide a valid <b>Bitcoin Wallet Address</b> to avoid payment issues.</p>
+                    <input type="text" name="text" placeholder="Bitcoin Wallet Address"/>
                 <div>
                     <i className="fas fa-spinner fa-spin" style={{display: loading ? "inline" : "none"}}></i>
                     <input type="submit" value="Submit" disabled={!loading ? false : true}/></div>

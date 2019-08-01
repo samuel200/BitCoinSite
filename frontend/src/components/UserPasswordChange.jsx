@@ -20,12 +20,13 @@ export default function UserPasswordChange(){
         const newPassword = form.querySelector("input[name='new-password']");
         const errorHolder = form.querySelector("div.error-message");
 
-        if(newPassword.value !== "" && userPassword.value === newPassword.value){
+        if(newPassword.value !== "" && userPassword.value !== newPassword.value){
             setLoading(true);
             axios.post(url.domain_url + "/password_change/" + username + "/", {password: newPassword.value})
                 .then(response => {
                     setLoading(false);
                     newPassword.value = "";
+                    showErrorMessage(errorHolder, "Password Change Successful")
                 })
                 .catch(error =>{
                     setLoading(false)

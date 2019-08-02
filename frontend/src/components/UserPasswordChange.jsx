@@ -19,8 +19,9 @@ export default function UserPasswordChange(){
     const onSubmit = form =>{
         const newPassword = form.querySelector("input[name='new-password']");
         const errorHolder = form.querySelector("div.error-message");
+        const passwordTest = /[a-zA-Z\d]{8,}/;
 
-        if(newPassword.value !== "" && userPassword.value !== newPassword.value){
+        if(newPassword.value !== "" && userPassword.value !== newPassword.value && passwordTest.test(newPassword.value)){
             setLoading(true);
             axios.post(url.domain_url + "/password_change/" + username + "/", {password: newPassword.value})
                 .then(response => {
@@ -35,7 +36,10 @@ export default function UserPasswordChange(){
         }else{
             if(newPassword.value === userPassword){
                 showErrorMessage(errorHolder, "Password cannot be the same as the previous")
-            }else{
+            }else if(!passwordTest.test(newPassword)){
+                showErrorMessage(errorHolder, "Password Should contain more 8 characters")
+            }
+            else{
                 showErrorMessage(errorHolder, "Field value incorrect")
             }
         }

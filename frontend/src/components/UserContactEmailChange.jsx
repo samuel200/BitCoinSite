@@ -25,6 +25,7 @@ export default function UserContactEmailChange({ userProfile }) {
                 .then(response => {
                     setLoading(false);
                     email.value = "";
+                    showErrorMessage(errorHolder, "Email Changed Successfully")
                 })
                 .catch(error =>{
                     setLoading(false)
